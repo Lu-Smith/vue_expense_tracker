@@ -1,9 +1,12 @@
 <template>
-  <Header />
-  <div class="container">
-    <Balance />
-    <IncomeExpenses />
-    <TransactionList />
+  <div 
+  class="w-full p-7 bg-slate-50 flex items-center flex-col justify-start">
+    <Header />
+    <div class="container w-96">
+      <Balance />
+      <IncomeExpenses />
+      <TransactionList />
+    </div>
   </div>
 </template>
 
