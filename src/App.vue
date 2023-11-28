@@ -1,8 +1,8 @@
 <template>
   <div 
-  class="w-full p-7 bg-slate-50 flex items-center flex-col justify-start">
+  class="w-full p-7 bg-slate-50 flex items-start flex-col justify-center">
     <Header />
-    <div class="container w-96">
+    <div class="">
       <Balance />
       <IncomeExpenses />
       <TransactionList />
