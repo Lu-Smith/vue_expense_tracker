@@ -8,7 +8,7 @@
         @mouseleave="showButton = false"
       >
         Cash <span>-$120</span>
-        <button class="hidden absolute bg-red-600 px-2 text-white" v-show="showButton" @mouseover.stop> <!-- Use @mouseover.stop to prevent event propagation -->
+        <button class="hidden absolute bg-red-600 px-2 text-white duration-300" v-show="showButton" @mouseover.stop> <!-- Use @mouseover.stop to prevent event propagation -->
           x
         </button>
       </li>
@@ -19,7 +19,7 @@
         @mouseleave="showButton = false"
       >
         Income <span>$800</span>
-        <button class="hidden absolute bg-red-600 px-2 text-white" v-show="showButton" @mouseover.stop>
+        <button class="hidden absolute bg-red-600 px-2 text-white duration-300" v-show="showButton" @mouseover.stop>
           x
         </button>
       </li>
