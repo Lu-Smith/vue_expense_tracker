@@ -1,6 +1,8 @@
 <template>
   <Header />
-  <Balance />
+  <div class="container">
+    <Balance />
+  </div>
 </template>
 
 <script lang="ts">
