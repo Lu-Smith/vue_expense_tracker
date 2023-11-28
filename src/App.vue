@@ -1,5 +1,13 @@
 <template>
-    <h1 class='text-green-800 text-3xl font-bold'>
-    Hello World!
-  </h1>
+  <Header />
 </template>
+
+<script lang="ts">
+ import Header from './components/Header.vue';
+
+ export default {
+  components: {
+    Header,
+  }
+ }
+</script>
