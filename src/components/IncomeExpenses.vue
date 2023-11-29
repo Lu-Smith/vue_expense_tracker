@@ -16,11 +16,11 @@
 <script lang="ts" setup >
 const props = defineProps({
     income: {
-        type: Number,
+        type: String,
         required: true, 
     },
     expense: {
-        type: Number,
+        type: String,
         required: true, 
     }
 })
