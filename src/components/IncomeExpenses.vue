@@ -4,11 +4,24 @@
         class="py-3 px-8 flex items-center flex-col justify-center w-30 
         border-solid border-r-2 border-sky-50 shadow-sm">
             <h4>Income</h4>
-            <p id="money-plus" class="text-green-600">+$0</p>
+            <p id="money-plus" class="text-green-600">+${{ income }}</p>
         </div>
         <div class="py-3 px-8 flex items-center flex-col justify-center w-30">
             <h4>Expense</h4>
-            <p id="money-minus" class="text-red-600">-$0</p>
+            <p id="money-minus" class="text-red-600">-${{ expense }}</p>
         </div>
     </div>
 </template>
+
+<script lang="ts" setup >
+const props = defineProps({
+    income: {
+        type: Number,
+        required: true, 
+    },
+    expense: {
+        type: Number,
+        required: true, 
+    }
+})
+</script>
