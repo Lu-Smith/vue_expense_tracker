@@ -4,27 +4,27 @@
         <div class="flex items-start justify-center flex-col gap-2 w-full">
             <label 
             for="text"
-            class="font-semibold mt-2">
+            class="font-semibold mt-2 text-base">
                 Income/Expense
             </label>
             <input 
             type="text" 
             id="text" 
             placeholder="Enter text..."
-            class="px-2 py-1 w-full"/>
+            class="px-2 py-1 w-full text-base"/>
         </div>
         <div class="flex items-start justify-center flex-col gap-2 w-full">
             <label 
             for="amount"
-            class="font-semibold">
+            class="font-semibold text-base">
             Amount 
             </label>
             <input
             type="text"
             id="amount"
             placeholder="Enter amount..."
-            class="px-2 py-1 w-full"/>
+            class="px-2 py-1 w-full text-base"/>
         </div>
-        <button class="bg-purple-400 px-2 py-1">Add transaction</button>
+        <button class="bg-purple-400 hover:bg-purple-300 mt-4 px-2 py-1 w-full duration-300 shadow-sm hover:w-4/5 m-auto">Add transaction</button>
     </form>
 </template>

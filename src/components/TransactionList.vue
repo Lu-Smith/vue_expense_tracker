@@ -2,7 +2,7 @@
     <h3 class="font-semibold border-solid border-b-2 border-slate-300">History</h3>
     <ul id="list" class="duration-300">
       <li
-        class="relative bg-slate-200 mt-2 px-2 py-1 flex items-center 
+        class="relative bg-slate-200 mt-2 px-2 py-1 flex items-center text-base
           flex-row justify-between shadow-sm border-solid border-r-4 border-red-600 duration-300"
         @mouseover="showButton = true"
       >
@@ -12,7 +12,7 @@
         Cash <span>-$120</span>
       </li>
       <li
-        class="relative bg-slate-200 mt-2 px-2 py-1 flex items-center 
+        class="relative bg-slate-200 mt-2 px-2 py-1 flex items-center text-base
           flex-row justify-between shadow-sm border-solid border-r-4 border-green-600 duration-300"
         @mouseover="showButton = true"
     
