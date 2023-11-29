@@ -24,7 +24,11 @@
   const showButton = ref(false);
   const props = defineProps({
     transactions: {
-      type: Array,
+      type: Array<{
+        id: number;
+        text: string;
+        amount: number;
+      }>,
       required: true,
     }
   })
