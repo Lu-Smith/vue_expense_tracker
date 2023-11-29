@@ -20,8 +20,15 @@
   
   <script lang="ts" setup>
   import { ref } from 'vue';
-  
+
   const showButton = ref(false);
+  const props = defineProps({
+    transactions: {
+      type: Array,
+      required: true,
+    }
+  })
+
   </script>
   
   <style scoped>
