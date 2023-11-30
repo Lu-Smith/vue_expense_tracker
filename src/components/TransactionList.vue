@@ -23,7 +23,7 @@
   <script lang="ts" setup>
   import { ref } from 'vue';
 
-  const emit = defineEmits(['transationDelated'])
+  const emit = defineEmits(['transationDeleted'])
 
   const showButton = ref(false);
   const props = defineProps({
@@ -38,7 +38,7 @@
   })
 
   const deleteTransaction = (id: number) => {
-    emit('transationDelated', id)
+    emit('transationDeleted', id)
   }
   </script>
   

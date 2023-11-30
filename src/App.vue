@@ -5,7 +5,7 @@
     <div class="">
       <Balance :total="total" />
       <IncomeExpenses :income="income" :expense="expense"/>
-      <TransactionList :transactions="transactions" @transation-delated="handleTransactionDelated"/>
+      <TransactionList :transactions="transactions" @transation-deleted="handleTransactionDeleted"/>
       <AddTransactions @transaction-submited="handleTransactionSubmitted"/>
     </div>
   </div>
@@ -72,14 +72,13 @@
     return Math.floor(Math.random() * 1000000);
   };
 
-  const handleTransactionDelated = (id: number) => {
+  const handleTransactionDeleted = (id: number) => {
     transactions.value = transactions.value.filter(
-      (transaction) => {
-      transaction.id === id;
+    (transaction) => transaction.id !== id
+  );
 
-      console.log(id)
-      toast.success('Transaction delated');
-    })
+  console.log(id);
+  toast.success('Transaction deleted');
   
   }
 </script>
