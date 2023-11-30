@@ -36,10 +36,20 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { useToast } from 'vue-toastification';
 
 const text = ref('');
-const amount = ref(0);
+const amount = ref('');
+const toast = useToast();
+
 const onSubmit = () => {
+    if(!text.value || !amount.value) {
+    toast.error('Both fields must br filled');
+    return;
+    }
     console.log(text.value, amount.value);
+
+    text.value = '';
+    amount.value = '';
 };
 </script>
