@@ -18,6 +18,12 @@
  import TransactionList from './components/TransactionList.vue';
  import AddTransactions from './components/AddTransactions.vue';
 
+ interface dataProps {
+  id: number,
+  text: string,
+  amount: number,
+ }
+
  import { ref, computed } from 'vue';
 
  const transactions = ref([
@@ -48,7 +54,15 @@
     }, 0).toFixed(2);
   });
 
-  const handleTransactionSubmitted = (transactionData) => {
-    console.log(transactionData);
+  const handleTransactionSubmitted = (transactionData: dataProps) => {
+    transactions.value.push({
+      id: generateUniqueId(),
+      text: transactionData.text,
+      amount: transactionData.amount,
+    });
+  };
+
+  const generateUniqueId = () => {
+    return Math.floor(Math.random() * 1000000);
   }
 </script>
