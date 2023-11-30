@@ -18,6 +18,8 @@
  import TransactionList from './components/TransactionList.vue';
  import AddTransactions from './components/AddTransactions.vue';
 
+ import { useToast } from 'vue-toastification';
+
  interface dataProps {
   id: number,
   text: string,
@@ -25,6 +27,8 @@
  }
 
  import { ref, computed } from 'vue';
+
+ const toast = useToast();
 
  const transactions = ref([
   {id: 1, text: 'Flowers', amount: -19.99},
@@ -60,6 +64,8 @@
       text: transactionData.text,
       amount: transactionData.amount,
     });
+
+    toast.success('Transaction added');
   };
 
   const generateUniqueId = () => {
