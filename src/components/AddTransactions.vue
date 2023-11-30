@@ -40,6 +40,7 @@ import { useToast } from 'vue-toastification';
 
 const text = ref('');
 const amount = ref('');
+const emit = defineEmits(['transactionSubmited']);
 const toast = useToast();
 
 const onSubmit = () => {
@@ -47,7 +48,13 @@ const onSubmit = () => {
     toast.error('Both fields must br filled');
     return;
     }
-    console.log(text.value, amount.value);
+    
+    const transactionData = {
+        text: text.value,
+        amount: parseFloat(amount.value),
+    }
+
+    emit('transactionSubmited', transactionData);
 
     text.value = '';
     amount.value = '';
