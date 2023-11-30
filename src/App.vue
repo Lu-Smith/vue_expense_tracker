@@ -5,7 +5,7 @@
     <div class="">
       <Balance :total="total" />
       <IncomeExpenses :income="income" :expense="expense"/>
-      <TransactionList :transactions="transactions"/>
+      <TransactionList :transactions="transactions" @transation-delated="handleTransactionDelated"/>
       <AddTransactions @transaction-submited="handleTransactionSubmitted"/>
     </div>
   </div>
@@ -70,5 +70,16 @@
 
   const generateUniqueId = () => {
     return Math.floor(Math.random() * 1000000);
+  };
+
+  const handleTransactionDelated = (id: number) => {
+    transactions.value = transactions.value.filter(
+      (transaction) => {
+      transaction.id === id;
+
+      console.log(id)
+      toast.success('Transaction delated');
+    })
+  
   }
 </script>
