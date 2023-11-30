@@ -10,7 +10,9 @@
       :class="transaction.amount < 0 ? 'border-red-600' : 'border-green-600'">
           <button 
           class="hidden bg-red-600 px-2 text-white duration-300" 
-          v-show="showButton" @mouseover.stop> 
+          v-show="showButton" 
+          @mouseover.stop
+          @click="deleteTransaction(transaction.id)"> 
           x
           </button>
            {{ transaction.text }} <span>${{ transaction.amount }}</span>
@@ -20,6 +22,8 @@
   
   <script lang="ts" setup>
   import { ref } from 'vue';
+
+  const emit = defineEmits(['transationDelated'])
 
   const showButton = ref(false);
   const props = defineProps({
@@ -33,6 +37,9 @@
     }
   })
 
+  const deleteTransaction = (id: number) => {
+    emit('transationDelated', id)
+  }
   </script>
   
   <style scoped>
