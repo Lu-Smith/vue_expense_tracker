@@ -5,7 +5,7 @@
     <div class="">
       <Balance :total="total" />
       <IncomeExpenses :income="income" :expense="expense"/>
-      <TransactionList :transactions="transactions" @transation-deleted="handleTransactionDeleted"/>
+      <TransactionList :transactions="transactions" @transaction-deleted="handleTransactionDeleted"/>
       <AddTransactions @transaction-submited="handleTransactionSubmitted"/>
     </div>
   </div>
@@ -20,21 +20,25 @@
 
  import { useToast } from 'vue-toastification';
 
- interface dataProps {
+ interface DataProps {
   id: number,
   text: string,
   amount: number,
  }
 
- import { ref, computed } from 'vue';
+ import { ref, computed, onMounted } from 'vue';
 
  const toast = useToast();
 
- const transactions = ref([
-  {id: 1, text: 'Flowers', amount: -19.99},
-  {id: 2, text: 'Bread', amount: -2.40},
-  {id: 3, text: 'Milk', amount: -1.30},
-  {id: 4, text: 'Salary', amount: 799.99}]);
+ const transactions = ref<DataProps[]>([]);
+
+ onMounted(() => {
+  const savedTransactions = JSON.parse
+  (localStorage.getItem('transactions') || 'null') as DataProps[];
+  if (savedTransactions) {
+    transactions.value = savedTransactions;
+  }
+});
 
   const total = computed(() => {
     return transactions.value.reduce((acc, transaction) => {
@@ -58,7 +62,7 @@
     }, 0).toFixed(2);
   });
 
-  const handleTransactionSubmitted = (transactionData: dataProps) => {
+  const handleTransactionSubmitted = (transactionData: DataProps) => {
     transactions.value.push({
       id: generateUniqueId(),
       text: transactionData.text,
