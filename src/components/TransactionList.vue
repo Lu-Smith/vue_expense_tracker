@@ -15,7 +15,13 @@
           @click="deleteTransaction(transaction.id)"> 
           x
           </button>
-           {{ transaction.text }} <span>${{ getDisplayAmount(transaction.amount) }}</span>
+           {{ transaction.text }} 
+          <span v-if="transaction.amount > 0">
+            ${{ getDisplayAmount(transaction.amount) }}
+          </span>
+          <span v-else>
+            -${{ getDisplayAmount(Math.abs(transaction.amount)) }}
+          </span>
       </li>  
     </ul>
   </template>
