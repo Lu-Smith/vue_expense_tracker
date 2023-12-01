@@ -69,6 +69,8 @@
       amount: transactionData.amount,
     });
 
+    saveTransactionsToLocalStorage();
+
     toast.success('Transaction added');
   };
 
@@ -81,8 +83,14 @@
     (transaction) => transaction.id !== id
   );
 
-  console.log(id);
+  saveTransactionsToLocalStorage;
+
   toast.success('Transaction deleted');
-  
+  }
+
+  const saveTransactionsToLocalStorage = () => {
+    localStorage.setItem('transactions', JSON.stringify(
+      transactions.value
+    ));
   }
 </script>
