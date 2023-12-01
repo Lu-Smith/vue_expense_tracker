@@ -2,12 +2,15 @@
   <div 
   class="w-full p-7 rounded bg-slate-50 flex items-start flex-col justify-center">
     <Header />
-    <div class="">
+    <div>
       <Balance :total="total" />
       <IncomeExpenses :income="income" :expense="expense"/>
       <TransactionList :transactions="transactions" @transaction-deleted="handleTransactionDeleted"/>
       <AddTransactions @transaction-submited="handleTransactionSubmitted"/>
     </div>
+  </div>
+  <div>
+    <Footer />
   </div>
 </template>
 
@@ -17,6 +20,7 @@
  import IncomeExpenses from './components/IncomeExpenses.vue';
  import TransactionList from './components/TransactionList.vue';
  import AddTransactions from './components/AddTransactions.vue';
+ import Footer from './components/Footer.vue';
 
  import { useToast } from 'vue-toastification';
 

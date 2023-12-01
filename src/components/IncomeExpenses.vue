@@ -8,7 +8,7 @@
         </div>
         <div class="py-3 px-8 flex items-center flex-col justify-center w-30">
             <h4>Expense</h4>
-            <p id="money-minus" class="text-red-600">-${{ expense }}</p>
+            <p id="money-minus" class="text-red-600">-${{ expense.replace('-', '') }}</p>
         </div>
     </div>
 </template>
