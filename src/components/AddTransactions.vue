@@ -30,7 +30,7 @@
             class="px-2 py-1 w-full text-base"
             v-model="amount"/>
         </div>
-        <button class="bg-purple-400 hover:bg-purple-300 mt-4 px-2 py-1 w-full duration-300 shadow-sm hover:w-4/5 m-auto">Add transaction</button>
+        <button class="bg-purple-600 text-white text-base rounded hover:bg-purple-300 mt-4 px-2 py-1 w-full duration-300 shadow-sm hover:w-4/5 m-auto">Add transaction</button>
     </form>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div 
-  class="w-full p-7 bg-slate-50 flex items-start flex-col justify-center">
+  class="w-full p-7 rounded bg-slate-50 flex items-start flex-col justify-center">
     <Header />
     <div class="">
       <Balance :total="total" />
