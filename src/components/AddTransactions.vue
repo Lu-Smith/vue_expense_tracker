@@ -14,7 +14,7 @@
             type="text" 
             id="text" 
             placeholder="Enter text..."
-            class="px-2 py-1 w-full text-base"
+            class="px-2 py-1 w-full text-base rounded"
             v-model="text"/>
         </div>
         <div class="flex items-start justify-center flex-col gap-2 w-full">
@@ -27,7 +27,7 @@
             type="amount"
             id="amount"
             placeholder="Enter amount..."
-            class="px-2 py-1 w-full text-base"
+            class="px-2 py-1 w-full text-base rounded"
             v-model="amount"/>
         </div>
         <button class="bg-purple-600 text-white text-base rounded hover:bg-purple-300 mt-4 px-2 py-1 w-full duration-300 shadow-sm hover:w-4/5 m-auto">Add transaction</button>
