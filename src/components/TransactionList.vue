@@ -15,7 +15,7 @@
           @click="deleteTransaction(transaction.id)"> 
           x
           </button>
-           {{ transaction.text }} <span>${{ transaction.amount }}</span>
+           {{ transaction.text }} <span>${{ getDisplayAmount(transaction.amount) }}</span>
       </li>  
     </ul>
   </template>
@@ -40,6 +40,10 @@
   const deleteTransaction = (id: number) => {
     emit('transactionDeleted', id)
   }
+
+  const getDisplayAmount = (amount: number) => {
+  return amount < 0 ? amount.toString().replace('-', '') : amount.toString();
+};
   </script>
   
   <style scoped>
